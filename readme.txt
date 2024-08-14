@@ -2,6 +2,9 @@ Updating from Visual C++ 14.29.30154 to 14.40.33814, crash.
 
 In removing Windows XP support, what was also removed
 was initialization of the atexit table, for managed C++, linked with /noentry.
+See PR 466586.
+There is a line in the code saying exactly what it will break, and we have that in our code.
+I can presumably fix by removing /noentry but maybe retain compatibility with the larger ecosystem.
 
 Older compiler:
  Program works, prints ok.
